@@ -1,0 +1,15 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-fisteus-2010 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-fisteus-2010 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "ZaXSI7V6CUGmJpJGcR3OD2A+XZQn+J0erV80dj4P+GJPAFS+4hxDNR+64GXiPCXP3xfNiHTz4Q9k9xfYAh4moWIeUhNF67gwsxgJIXmmRNaSA+bWiV8zsG672VmJrVHJEMEAjXeSWHSiXR3LTd1uyqGLu9B3MlrsFA9qkLVhmWpMWBvquFkQBrsq+MRLEVyUZKqz5/C768cqj1eZGOl5H85Sp4aOH+JLEg053pyLjpY+ZkHJjvAz4v7AU+1pbcGpU8uK4NC9MY4vuHVyfIoM2+Fp4IyB79snZcOZMR9ReofISyg2B5BJwYxygYl15AihaAm4oip+4Edi0ZoVg8O69D5dgNy1IeI19sLQlZnR61aUmPHKXxmIPSf5kq2EiTAr0WSGxeNMxC8KUlWCTXudoIUFcqdutVPo9acB3F9BYyKMQX8r2Q0w+OScbo5fXyrb1tC/bFbUS1v0J/O2f2YJNfzHaXD1U/OxME2KFXthw3uoe/J2ZFGRY3o94ChTtw3mfEXd4cE1IKWMmJr/fNrPUYaq+iqHVm9Uw+5tB2eq8Obs2rQOZ6a8hLmmq8OUcjDYrmify1/l4kZIvgNGM+1QH1kS4ut8M7LdULw8unHE9H+OHnm8deMZH/oEtFzQ56qVX80X1RhrsiSzo9dXV5GzdhgS6MoOPMaXQio+OIl4jpc=" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/a-1.n3#a-1> owl:sameAs <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/b-1.n3#b-1> .
+}

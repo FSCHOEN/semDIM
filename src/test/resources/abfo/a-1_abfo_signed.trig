@@ -1,0 +1,35 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix trusted: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/trusted/> .
+@prefix a: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/a/> .
+@prefix b: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/b/> .
+@prefix f: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/f/> .
+@prefix o: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/o/> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-carroll-2003 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-carroll-2003 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "cXDdZzL6iybN8R1AdOe6ILnDBYCfCJ89m6QYKVDJBzf2wY7KyjwplCuWlaxZJv3Szoxn2I4EnQL9Lw0seKnb28QW/dlW9fmv6TAsm1sEvzpawVU3RC3ENxJumFwUhNBerfytut0X23tSIy6IIcDqCzBJMv2eSf0P+ondO12oiNTdWeQXlD5F/ePFs1l27rus7JUegHWg8zWA7GR8izYK3vkqyLLJvicio9qV7vvF6PmHhrLLsbp4FHjMAL7cWwvVd5f6uJVKLIhuywE7KguS5lRiSZJS/f6EbCFLn/mHBqSLZY/Sg/zHWGhNH1l+EBQ0FN+pNU/th/isrrUxHuMEjQ==" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	a:a-1 owl:sameAs a:a-2 .
+	a:a-1 owl:sameAs b:b-1 .
+	a:a-1 owl:sameAs f:f-1 .
+	a:a-1 owl:sameAs o:o-1 .
+	a:group-1 foaf:member a:a-2 .
+	a:group-1 foaf:member f:f-1 .
+	a:group-1 owl:sameAs a:group-2 .
+	a:group-1 owl:sameAs b:group-1 .
+	a:groupAdmins-a-1 foaf:member a:a-1 .
+	a:groupAdmins-a-1 foaf:member a:a-2 .
+	a:groupAdmins-a-1 owl:sameAs a:groupAdmins-a:a-2 .
+	a:groupAdmins-a-1 owl:sameAs b:groupAdmins-b-1 .
+	b:b-1 owl:sameAs a:a-2 .
+}

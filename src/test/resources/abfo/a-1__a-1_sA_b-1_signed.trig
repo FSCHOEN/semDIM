@@ -1,0 +1,21 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix trusted: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/trusted/> .
+@prefix a: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/a/> .
+@prefix b: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/b/> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-carroll-2003 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-carroll-2003 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "BAThCnKNXbWvXwdFNAuGqAnqB0c6dzp44+RjZi9r43oozqdPwQCVdtOW10k0lR1KKFB/3jRqRHtjb/bOe4pRc5+uMi/4WnnuFbPcgvH5eT7nC3/BYjaqNlbUhufG1VLL1qbKw38OovosiIPpyxkxMxWnzFYK2cmFdcMBRnqjOfgoajfeQnHZq/Zf6PA/d8eEkTWAatSvBX9hoWhmaj6/MS3DYwNQhraTm3CIZ79ye/6yHGmlffhrdMlOsM7gzl/JujhQxh3DEq6RXyzcgBFSuNLmw23fCfvbyXR0HvMYlq8uj9negUlu8mWdfxmBn/GdAUkC3ROdgNWZXpux1EY/xQ==" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	a:a-1 owl:sameAs b:b-1 .
+}

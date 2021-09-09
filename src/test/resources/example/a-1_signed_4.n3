@@ -1,0 +1,20 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbin: <http://dbin.org#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-tummarello-2005 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-tummarello-2005 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/a-1.n3#a-1> owl:sameAs <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/b-1.n3#b-1> .
+	_:reific1 a rdf:Statement .
+	_:reific1 rdf:subject <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/a-1.n3#a-1> .
+	_:reific1 rdf:predicate owl:sameAs .
+	_:reific1 rdf:object <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/b-1.n3#b-1> .
+	_:reific1 dbin:PGPCertificate "cert" .
+	_:reific1 dbin:Base64SigValue "bIewUOinszm0xBYRjgfKtCuEXSHg0vWzDYVyostPvFRqT52ypKnEOhMslmKLiP3YRjMGHsIMNFNO3n8RY1geuI+LuMh1yyleZoHZJbiUW2DFXgqE+/apzRWwYU2PLBQBnHc2Vsgnxbjdk15UbW6N8/JIOE5BuzGGyXcgm8GcBurutfVF198GM/tDlB/LZojLbBYkR/CN8kb4NO50MgDNuUhmrRAXpzlUK4lqjsIK/wxNCKRUn3+cvbnnk/1vyzsVBnMiTR92Rrir2FQKiWxOd6SAc8JdQUM6H+dcVIN0BsD0NHyj/KXaBfTW/RI16eIgVuiCx94atR+iST+78nPakP9Uo7r0JpoIPb0Q8W8h+VtHb1V9vFEwvuHLnMqildyRUvoGG2OlEhGQauefgH1nE/l+wsiUCegXoLhVgCI8iDlYkzvBEjYZ/TeI3MuP13+WQDozgSQNCkkfd0cifYpGb9sQuStzwD/Gd+POh+62zki50ng+XwCfY5PxoYOf5D8OEnSYs47GXQV/E7DWJUASxj/AO3/fsB4pA2dUVNBEx1qExYGjSfbo4+9lTOcSgeGDJWk0HW25QnFwDk0aaiyyvJixgDJPy1RnF2I7dF5fGCT3ybeJNb32wQKeQ+eJQU1UWy348C47oJbjE2y9ukkdKMO+h/wb+/GEW6qlYarZyYA=" .
+}

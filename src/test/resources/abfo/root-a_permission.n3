@@ -1,0 +1,38 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix trusted: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/trusted/> .
+
+@prefix dgm: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgm.owl#> .
+
+@prefix a: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/a/> .
+@prefix b: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/b/> .
+
+
+a:admin_perm-1 a dgm:groupPermission ;
+	dul:defines a:namespace_owner-1 ;
+	dul:defines a:group_admin-1 ;
+	dul:defines a:group_administration-1 ;
+	dul:defines a:administrated_group_role-1 ;
+		
+a:namespace_owner-1 a dgm:AssignerRole ;
+	dul:isRoleOf a:root-a-1 .
+	
+a:group_admin-1 a dgm:AssignedRole ;
+	dul:isRoleOf a:a-1 .
+	
+a:group_administration-1 a dgm:AssignedTask ;
+	dul:isExecutedIn a:admin_action-1 .
+
+a:administrated_group_role-1 a dgm:AffectedGroupRole ;
+	dul:isRoleOf a:group-1 .
+
+a:admin_assign-1 a dgm:groupPermissionExecution ;
+	dul:isSettingFor a:root-a-1 ;
+	dul:isSettingFor a:a-1 ;
+	dul:isSettingFor a:admin_action-1 ;
+	dul:isSettingFor a:group-1 .
+
+
+	

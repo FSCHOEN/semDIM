@@ -1,0 +1,26 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix trusted: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/trusted/> .
+
+@prefix dgm: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgm.owl#> .
+
+@prefix a: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/a/> .
+@prefix b: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/b/> .
+@prefix f: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/f/> .
+@prefix o: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/abfo/o/> .
+
+
+a:a-1 a foaf:person .
+a:a-2 a foaf:person .
+
+a:group-1 a foaf:group .
+a:group-2 a foaf:group .
+
+a:groupAdmins-a-1 a foaf:group ;
+	foaf:member a:a-1 .
+a:groupAdmins-a-2 a foaf:group .
+
+a:group-1 dgm:administratedBy a:groupAdmins-a-1 .
+a:group-2 dgm:administratedBy a:groupAdmins-a-2 .

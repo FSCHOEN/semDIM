@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#"
+     xml:base="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl">
+        <owl:imports rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#a-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#a-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assignee"/>
+        <DUL:hasSetting rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_action-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_action-1">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <DUL:hasSetting rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupExecution"/>
+        <DUL:satisfies rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupWorkflow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#administrated_group_role-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#administrated_group_role-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroupRole"/>
+        <DUL:isDefinedIn rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1"/>
+        <DUL:isRoleOf rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroup"/>
+        <DUL:hasSetting rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group_admin-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group_admin-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedRole"/>
+        <DUL:isDefinedIn rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1"/>
+        <DUL:isRoleOf rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#a-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group_administration-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#group_administration-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedTask"/>
+        <DUL:isDefinedIn rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1"/>
+        <DUL:isExecutedIn rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_action-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#namespace_owner-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#namespace_owner-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignerRole"/>
+        <DUL:isDefinedIn rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_perm-1"/>
+        <DUL:isRoleOf rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#root-a-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#root-a-1 -->
+
+    <owl:NamedIndividual rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#root-a-1">
+        <rdf:type rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assigner"/>
+        <DUL:hasSetting rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM_group_permission_admin_example.owl#admin_assign-1"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

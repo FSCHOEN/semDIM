@@ -1,0 +1,63 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dgfoaf: <http://userpages.uni-koblenz.de/~schwagereit/dgfoaf/0.1/dgfoaf.owl#>.
+@prefix : <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#>.
+@prefix adam: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#>.
+@prefix barnie: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafbarnie.n3#>.
+@prefix larissa: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/larissa.n3#>.
+
+<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3> a foaf:PersonalProfileDocument;
+	foaf:primarytopic :me;
+	foaf:maker :me.
+
+:me a foaf:Person;
+	foaf:name "Adam Mada".
+
+:HappyGroup a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupp;
+	dgfoaf:hasPersonMember barnie:me;
+	dgfoaf:hasPersonMember larissa:me.
+
+:HappyGroupp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "Happiest Group on Earth";
+	dgfoaf:hasGrantPersonAdmin :HappyGroupc;
+	dgfoaf:hasBanAdmin :HappyGroupb;
+	dgfoaf:hasBanAdmin :HappyGroupc.
+	
+:HappyGroupc a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupcp.
+	
+:HappyGroupcp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "HappyGroupAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3#me>;
+	dgfoaf:hasDefaultMemberPerson :me.
+
+
+:HappyGroupb a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupbp.
+	
+:HappyGroupbp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "HappyGroupBanAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3#me>;
+	dgfoaf:hasDefaultMemberPerson :me.
+	
+		
+	
+	
+:SadGroup a foaf:Group;
+	dgfoaf:hasPolicy :SadGroupp.
+
+:SadGroupp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "Sadest Group on Earth";
+	dgfoaf:hasGrantPersonAdmin :SadGroupc;
+	dgfoaf:hasBanAdmin :SadGroupc.
+	
+:SadGroupc a foaf:Group;
+	dgfoaf:hasPolicy :SadGroupcp.
+	
+:SadGroupcp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "SadGroupAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/ronald.n3#me>;
+	dgfoaf:hasDefaultMemberPerson :me.
+	

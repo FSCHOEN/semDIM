@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix dgfoaf: <http://userpages.uni-koblenz.de/~schwagereit/dgfoaf/0.1/dgfoaf.owl#> .
+@prefix companyA: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/> .
+@prefix : <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/alice.n3#> .
+@prefix alice: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/alice.n3#> .
+@prefix ellen: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/ellen.n3#> .
+@prefix olaf: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/olaf.n3#> .
+@prefix ursula: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/ursula.n3#> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-carroll-2003 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-carroll-2003 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "bzzh5aMW1xgexWNMsVN5dJLwzDw2P8YWXKd/l9wBjJ5LBpcqDPNU1e2RNq+sWoHK1B7I3kvoxDA5XfezMzIBllOFTYTjakyTuUFvRaloKASjxlQ1rdWHROkHVRUag/Ssyus6ry6rXcj95f7hmtWWOWpu/bKKctsgQIlZBaSUEFpTWmSf3rbW9ZT+shMntsJa4ce6ia+yvbLFjUjOaQNEGkxxFfMgXwQxHI+01OHJ+b3ZZz9KfK3rEwRbA1upoI3aV3SULEqfHCnRj6TfUbXpzV31LApTja9gHaxnFQwDUpd5Bi8W22W1Y/WpxKGuPQFlnYBbC7D0u8+r9os37zMwO6799vUuUmOiiWGHx+B4hmyzoRDQFUWAchmiqCF9xxYG8sttLVgYf/2e454K8X4izCgY/HuUE4iNBJ8a+oCBsrhUUuRK/fuxkp33t4zSxaaykA9usODHjN0Vs5OZ4McF5aWysoXruV6l39EqvuI2QSP3erFaV4t5Ui4vRjfN8pSQjGhMFVQv8qfYMyp8qlxJKOyO1f3HQ0CJpbQY9kZO2T9AsbbL+iI8gv4A6IRRQt3llze3Xzw4H+Uz+U7s1AjxWM2+R2uoINeyms/EKzORBD4MuGGyC1xc1gwnD4TPwAP1BRuAykXXoTBnxyD4ydZpP+a+LkxzmvMQs3/OKIH/jlA=" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	companyA:alice.n3\#HeadOfHR dgfoaf:hasPolicy companyA:alice.n3\#HeadOfHRPolicy .
+	companyA:alice.n3\#HeadOfHR a foaf:Group .
+	companyA:alice.n3\#HeadOfHRAdmin dgfoaf:hasPolicy companyA:alice.n3\#HeadOfHRAdminPolicy .
+	companyA:alice.n3\#HeadOfHRAdmin dgfoaf:hasPolicy companyA:alice.n3\#HeadOfHRAdminPolicy .
+	companyA:alice.n3\#HeadOfHRAdmin a foaf:Group .
+	companyA:alice.n3\#HeadOfHRAdmin a foaf:Group .
+	companyA:alice.n3\#HeadOfHRAdminPolicy dgfoaf:hasDefaultMemberPerson companyA:alice.n3\#me .
+	companyA:alice.n3\#HeadOfHRAdminPolicy dgfoaf:hasDefaultMemberPerson companyA:alice.n3\#me .
+	companyA:alice.n3\#HeadOfHRAdminPolicy dgfoaf:hasLabel "HeadOfHRAdminanAdmins" .
+	companyA:alice.n3\#HeadOfHRAdminPolicy dgfoaf:hasLabel "HeadOfHRAdminsPolicy" .
+	companyA:alice.n3\#HeadOfHRAdminPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#HeadOfHRAdminPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#HeadOfHRPolicy dgfoaf:hasBanAdmin companyA:alice.n3\#HeadOfHRAdmin .
+	companyA:alice.n3\#HeadOfHRPolicy dgfoaf:hasGrantPersonAdmin companyA:alice.n3\#HeadOfHRAdmin .
+	companyA:alice.n3\#HeadOfHRPolicy dgfoaf:hasLabel "Head of HR for Company A" .
+	companyA:alice.n3\#HeadOfHRPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVec dgfoaf:hasPolicy companyA:alice.n3\#ProjectLeadHeavyVecPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVec a foaf:Group .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdmin dgfoaf:hasPolicy companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdmin dgfoaf:hasPolicy companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdmin a foaf:Group .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdmin a foaf:Group .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy dgfoaf:hasDefaultMemberPerson companyA:alice.n3\#me .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy dgfoaf:hasDefaultMemberPerson companyA:alice.n3\#me .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy dgfoaf:hasLabel "ProjectLeadHeavyVecAdminanAdmins" .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy dgfoaf:hasLabel "ProjectLeadHeavyVecAdminsPolicy" .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVecAdminPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#ProjectLeadHeavyVecPolicy dgfoaf:hasBanAdmin companyA:alice.n3\#ProjectLeadHeavyVecAdmin .
+	companyA:alice.n3\#ProjectLeadHeavyVecPolicy dgfoaf:hasGrantPersonAdmin companyA:alice.n3\#ProjectLeadHeavyVecAdmin .
+	companyA:alice.n3\#ProjectLeadHeavyVecPolicy dgfoaf:hasLabel "Project Lead for Company A" .
+	companyA:alice.n3\#ProjectLeadHeavyVecPolicy a dgfoaf:AdministratedGroupPolicy .
+	companyA:alice.n3\#me a foaf:Person .
+	companyA:alice.n3\#me foaf:name "Alice Allison" .
+	companyA:alice.n3\#version1 a rdfg:Graph .
+	companyA:alice.n3 a foaf:PersonalProfileDocument .
+	companyA:alice.n3 foaf:maker companyA:alice.n3\#me .
+	companyA:alice.n3 foaf:primarytopic companyA:alice.n3\#me .
+	companyA:alice.n3\#version1 {
+		companyA:alice.n3\#HeadOfHR dgfoaf:hasPersonMember companyA:ellen.n3\#me .
+		companyA:alice.n3\#ProjectLeadHeavyVec dgfoaf:hasPersonMember companyA:olaf.n3\#me .
+	}
+	companyA:alice.n3\#version2 {
+		companyA:alice.n3\#HeadOfHR dgfoaf:hasPersonMember companyA:ursula.n3\#me .
+		companyA:alice.n3\#ProjectLeadHeavyVec dgfoaf:hasPersonMember companyA:olaf.n3\#me .
+	}
+}

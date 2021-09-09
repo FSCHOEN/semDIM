@@ -1,0 +1,33 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://www.bizer.de/ExampleDocument/> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-carroll-2003 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-carroll-2003 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "ZaXo6COSKceSVdiGp1z29IzP4HtbK4KvpL4k0btEfYReKDj+6RooZqoL6EF6gVUN72tSU47v9pNaeYC2SMAYbNIG32dFiIIXK1U9ZMpYbn3teoWJHGTJwvp8ECBwb5NpGq3IBaKSbtciUKJ2T4bfpwzidrP3f+z+VB2TxddttfNNxDTXHJK5/+u7R5AOj29eQUWl2V/oi8rmI1IFtaGGOQdmcOU+6PixDqlHHf/G9aXhkSiEHKQiv1UJA7QNputhXTAbjAeMx2V9rReiDeie6VGIMjB3vZFBlvfIzoFyyO3pqz1pibESlb9soU47vJ+qWP4/RlvwpY38/Lp7w0xaZDdzcMozsW9XrqPzLZMMxtZOQZwZWnyPbeyCzpc2isuH/PHW/RcUxy7OLM3n54uEw6LujBasDz8btwTArrLaWRGx/n7hcAxNReVrDAGxTNWplWFysUnSloNNQAOdrB9T5Ia8rReWai6WbpVOe4GUn8fj6dBGCAUTUmB6wdQV1aNL6essU/Ye3eBe3cWV4zovLM0IYzrvffPAf0O5/Thx2DzhcJjumNfEK5/xhWc60BBdGxwIFuNg9nmcgeL9BHfM4ILK/sv+yGxrMZRFuPUccE/HX1eZcK26ELxjij608quXN0W+J5pLZHQEEOLis0rag4GiP/F4/nVKsgf9XL61Ic4=" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	
+}
+
+ex:Graph1 {
+	<http://www.bizer.de/i> foaf:mbox <mailto:chris@bizer.de> .
+	<http://www.bizer.de/Document1325> dc:title "Named Graphs"^^xsd:String ;
+		<http://purl.org/dc/elements/1.1/creator> <http://www.bizer.de/i> .
+	ex:Graph1 dc:date "2005-03-03"^^xsd:date . 
+	ex:Graph1 dc:creator <http://www.bizer.de/i> .
+	}
+	ex:Graph2 {
+		ex:Graph2 dc:creator <http://www.richardcyganiak.de/me> .
+		ex:Graph2 dc:date "2004-03-03"^^xsd:date .
+		<http://www.bizer.de/i> foaf:homepage <http://www.bizer.de> .
+		<http://www.bizer.de/i> foaf:name "Chris Bizer" .
+	}

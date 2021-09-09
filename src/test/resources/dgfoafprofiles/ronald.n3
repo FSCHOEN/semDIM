@@ -1,0 +1,36 @@
+# Intentionally malicious profile for testing. Tries to impersonate adam
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dgfoaf: <http://userpages.uni-koblenz.de/~schwagereit/dgfoaf/0.1/dgfoaf.owl#>.
+@prefix : <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#>.
+@prefix ronald: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/ronald.n3#>.
+@prefix penny: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/penny.n3#>. 
+
+<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/ronald.n3> a foaf:PersonalProfileDocument;
+	foaf:primarytopic <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3>;
+	foaf:maker <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3>.
+
+:me a foaf:Person;
+	foaf:name "Ronald".
+
+penny:me a foaf:Person.
+
+:HappyGroup a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupp;
+	dgfoaf:hasPersonMember penny:me.
+
+:HappyGroupp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "Happiest Group on Earth";
+	dgfoaf:hasGrantPersonAdmin :HappyGroupc;
+	dgfoaf:hasBanAdmin :HappyGroupc.
+	
+:HappyGroupc a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupcp.
+	
+:HappyGroupcp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "HappyGroupAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#me>;
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3#me>;.
+	

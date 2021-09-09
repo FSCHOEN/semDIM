@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dgfoaf: <http://userpages.uni-koblenz.de/~schwagereit/dgfoaf/0.1/dgfoaf.owl#>.
+@prefix : <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3#>.
+@prefix amanda: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3#>.
+@prefix charly: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafcharly.n3#>.
+@prefix larissa: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/larissa.n3#> .
+@prefix otherLarissa: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/otherLarissa.n3#> .
+@prefix alternativeDomain: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/alternativeDomain.n3#> .
+
+<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafamanda.n3> a foaf:PersonalProfileDocument;
+	foaf:primarytopic :me;
+	foaf:maker :me.
+
+:me a foaf:Person;
+	foaf:name "Amanda Mandala";
+	foaf:givenname "Amanda";
+	foaf:family_name "Mandala";
+	foaf:mbox <mailto:Amanda@aa.org>.
+
+
+:HappyGroup a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupp;
+	dgfoaf:hasPersonMember charly:me;
+	dgfoaf:hasPersonMember otherLarissa:me;
+	dgfoaf:banPerson alternativeDomain:SameLarissa2.
+
+larissa:me a foaf:person;
+	owl:sameAs alternativeDomain:SameLarissa2.
+	
+charly:me a foaf:Person.
+
+:HappyGroupp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "Happiest Group on Earth";
+	dgfoaf:hasGrantPersonAdmin :HappyGroupc;
+	dgfoaf:hasBanAdmin :HappyGroupb;
+	dgfoaf:hasBanAdmin :HappyGroupc.
+	
+:HappyGroupc a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupcp.
+	
+:HappyGroupcp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "HappyGroupAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#me>;
+	dgfoaf:hasDefaultMemberPerson :me.
+	
+:HappyGroupb a foaf:Group;
+	dgfoaf:hasPolicy :HappyGroupbp.
+	
+:HappyGroupbp a dgfoaf:AdministratedGroupPolicy;
+	dgfoaf:hasLabel "HappyGroupBanAdmins";
+	dgfoaf:hasDefaultMemberPerson <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/dgfoafprofiles/dgfoafadam.n3#me>;
+	dgfoaf:hasDefaultMemberPerson :me.

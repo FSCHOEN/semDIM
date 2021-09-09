@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1/> .
+
+@prefix dgfoaf: <http://userpages.uni-koblenz.de/~schwagereit/dgfoaf/0.1/dgfoaf.owl#> .
+
+
+@prefix companyA: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/> .
+
+@prefix : <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/alice.n3#> .
+@prefix alice: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/alice.n3#> .
+@prefix ellen: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/ellen.n3#> .
+@prefix olaf: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/olaf.n3#> .
+@prefix ursula: <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/companyprofiles/companyA/ursula.n3#> .
+
+
+companyA:alice.n3 a foaf:PersonalProfileDocument ;
+	foaf:primarytopic :me ;
+	foaf:maker :me .
+
+:me a foaf:Person ;
+	foaf:name "Alice Allison" .
+
+:HeadOfHR a foaf:Group ;
+	dgfoaf:hasPolicy :HeadOfHRPolicy .
+
+:version1 { 
+	:HeadOfHR dgfoaf:hasPersonMember ellen:me .
+	:ProjectLeadHeavyVec dgfoaf:hasPersonMember olaf:me . }
+
+:version2 {
+	:HeadOfHR dgfoaf:hasPersonMember ursula:me . 
+	:ProjectLeadHeavyVec dgfoaf:hasPersonMember olaf:me . }
+:version1 a rdfg:Graph .
+
+:HeadOfHRPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "Head of HR for Company A" ;
+	dgfoaf:hasGrantPersonAdmin :HeadOfHRAdmin ;
+	dgfoaf:hasBanAdmin :HeadOfHRAdmin .
+	
+:HeadOfHRAdmin a foaf:Group ;
+	dgfoaf:hasPolicy :HeadOfHRAdminPolicy .
+	
+:HeadOfHRAdminPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "HeadOfHRAdminsPolicy" ;
+	dgfoaf:hasDefaultMemberPerson :me .
+
+:HeadOfHRAdmin a foaf:Group ;
+	dgfoaf:hasPolicy :HeadOfHRAdminPolicy .
+	
+:HeadOfHRAdminPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "HeadOfHRAdminanAdmins" ;
+	dgfoaf:hasDefaultMemberPerson :me .
+
+:ProjectLeadHeavyVec a foaf:Group ;
+	dgfoaf:hasPolicy :ProjectLeadHeavyVecPolicy .
+
+:ProjectLeadHeavyVecPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "Project Lead for Company A" ;
+	dgfoaf:hasGrantPersonAdmin :ProjectLeadHeavyVecAdmin ;
+	dgfoaf:hasBanAdmin :ProjectLeadHeavyVecAdmin .
+	
+:ProjectLeadHeavyVecAdmin a foaf:Group ;
+	dgfoaf:hasPolicy :ProjectLeadHeavyVecAdminPolicy .
+	
+:ProjectLeadHeavyVecAdminPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "ProjectLeadHeavyVecAdminsPolicy" ;
+	dgfoaf:hasDefaultMemberPerson :me .
+
+:ProjectLeadHeavyVecAdmin a foaf:Group ;
+	dgfoaf:hasPolicy :ProjectLeadHeavyVecAdminPolicy .
+	
+:ProjectLeadHeavyVecAdminPolicy a dgfoaf:AdministratedGroupPolicy ;
+	dgfoaf:hasLabel "ProjectLeadHeavyVecAdminanAdmins" ;
+	dgfoaf:hasDefaultMemberPerson :me .

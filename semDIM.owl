@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#"
+     xml:base="http://gitlab.com/FSCHOEN/dgm/semDIM.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl">
+        <owl:imports rdf:resource="http://west.uni-koblenz.de/ontologies/2010/07/dgfoaf.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#ownsNamespace -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#ownsNamespace">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <owl:inverseOf rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOwnedBy"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:range rdf:resource="http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#administratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#administratedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#hasNamespace -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#hasNamespace">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <owl:inverseOf rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOf"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:range rdf:resource="http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#Namespace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOwnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#isNamespaceOwnedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#sameGroupAs -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#sameGroupAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#samePersonAs -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#samePersonAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#sameRoleAs -->
+
+    <owl:ObjectProperty rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#sameRoleAs">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#Namespace -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/semDIM.owl#Namespace">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroup -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroup">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupExecution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroupRole -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroupRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AffectedGroup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedRole -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assignee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedTask -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignedTask">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assignee -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assignee">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentExecution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assigner -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assigner">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentExecution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignerRole -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#AssignerRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isDefinedIn"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRoleOf"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#Assigner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentExecution -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentExecution">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupExecution -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupExecution">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#WorkflowExecution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupWorkflow"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupWorkflow -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentOnGroupWorkflow">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow -->
+
+    <owl:Class rdf:about="http://gitlab.com/FSCHOEN/dgm/semDIM.owl#PermissionAssignmentWorkflow">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Group">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person -->
+
+    <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

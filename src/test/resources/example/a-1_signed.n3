@@ -1,0 +1,16 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix c14n: <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#> .
+@prefix signature: <http://icp.it-risk.iwvi.uni-koblenz.de/ontologies/signature.owl#> .
+_:sigGraph {
+	_:gsm-1 signature:hasDigestMethod signature:dm-sha-256 .
+	_:gsm-1 signature:hasGraphCanonicalizationMethod signature:gcm-carroll-2003 .
+	_:gsm-1 signature:hasGraphDigestMethod signature:gdm-carroll-2003 .
+	_:gsm-1 signature:hasGraphSerializationMethod signature:gsm-trig .
+	_:gsm-1 signature:hasSignatureMethod signature:sm-rsa .
+	_:gsm-1 a signature:GraphSigningMethod .
+	_:sig-1 signature:hasGraphSigningMethod _:gsm-1 .
+	_:sig-1 signature:hasSignatureValue "bIewUOinszm0xBYRjgfKtCuEXSHg0vWzDYVyostPvFRqT52ypKnEOhMslmKLiP3YRjMGHsIMNFNO3n8RY1geuI+LuMh1yyleZoHZJbiUW2DFXgqE+/apzRWwYU2PLBQBnHc2Vsgnxbjdk15UbW6N8/JIOE5BuzGGyXcgm8GcBurutfVF198GM/tDlB/LZojLbBYkR/CN8kb4NO50MgDNuUhmrRAXpzlUK4lqjsIK/wxNCKRUn3+cvbnnk/1vyzsVBnMiTR92Rrir2FQKiWxOd6SAc8JdQUM6H+dcVIN0BsD0NHyj/KXaBfTW/RI16eIgVuiCx94atR+iST+78nPakP9Uo7r0JpoIPb0Q8W8h+VtHb1V9vFEwvuHLnMqildyRUvoGG2OlEhGQauefgH1nE/l+wsiUCegXoLhVgCI8iDlYkzvBEjYZ/TeI3MuP13+WQDozgSQNCkkfd0cifYpGb9sQuStzwD/Gd+POh+62zki50ng+XwCfY5PxoYOf5D8OEnSYs47GXQV/E7DWJUASxj/AO3/fsB4pA2dUVNBEx1qExYGjSfbo4+9lTOcSgeGDJWk0HW25QnFwDk0aaiyyvJixgDJPy1RnF2I7dF5fGCT3ybeJNb32wQKeQ+eJQU1UWy348C47oJbjE2y9ukkdKMO+h/wb+/GEW6qlYarZyYA=" .
+	_:sig-1 signature:hasVerificationCertificate "cert" .
+	_:sig-1 a signature:Signature .
+	<http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/a-1.n3#a-1> owl:sameAs <http://gitlab.com/FSCHOEN/RDF-Test-Data/raw/master/example/b-1.n3#b-1> .
+}
